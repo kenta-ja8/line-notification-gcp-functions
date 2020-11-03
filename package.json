@@ -1,0 +1,23 @@
+{
+  "name": "line-notify-service",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "config": {
+    "function_name": "XXXXXXXXXXFUNCTIONNAMEXXXXXXXXXX",
+    "region": "asia-northeast1",
+    "gcp_project": "XXXXXXXXXXGCPPROJECTNAMEXXXXXXXXXX",
+    "runtime": "nodejs12",
+    "line_token": "XXXXXXXXXXTOKENXXXXXXXXXX"
+  },
+  "scripts": {
+    "test": "LINE_TOKEN=$npm_package_config_line_token node local-test",
+    "deploy": "gcloud functions deploy $npm_package_config_function_name --runtime $npm_package_config_runtime --region=$npm_package_config_region --trigger-http --project $npm_package_config_gcp_project"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.21.0"
+  },
+  "devDependencies": {
+  }
+}
